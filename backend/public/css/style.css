@@ -1,0 +1,889 @@
+@font-face {
+  font-family: "Gamecube";
+  src: asset-url("GameCube.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Global Styles */
+body {
+  font-family: "MS Sans Serif", "Courier New", monospace;
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(0deg, transparent 24%, #403b72 25%, #403b72 26%, transparent 27%, transparent 74%, #403b72 75%, #403b72 76%, transparent 77%), linear-gradient(90deg, transparent 24%, #403b72 25%, #403b72 26%, transparent 27%, transparent 74%, #403b72 75%, #403b72 76%, transparent 77%);
+  background-size: 40px 40px; /* Grid size */
+}
+
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.image-container {
+  flex: 1;
+  text-align: center;
+}
+
+.profile-image {
+  width: 200px;
+  border-radius: 10px;
+  border: 2px solid #403b72;
+  box-shadow: 4px 4px 0 #1b1b3a, -4px -4px 0 #4a4a8a;
+}
+
+.text-container {
+  flex: 2;
+  color: #d1d3d2;
+}
+
+.text-container h2 {
+  color: #fe7d04;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.text-container p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Contact */
+#contact-page {
+  background-color: #403b72;
+  width: 800px;
+  margin: 20px auto;
+  border: 2px solid #403b72;
+  box-shadow: 6px 6px 0px #1b1b3a, -6px -6px 0px #4a4a8a;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+#contact-page .title-bar {
+  background-color: #695db0;
+  color: #f2f2f2;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #403b72;
+  font-size: 20px;
+  font-family: "MS Sans Serif", "Courier New", monospace;
+  box-sizing: border-box;
+}
+#contact-page .title-bar .buttons {
+  display: flex;
+  gap: 8px;
+}
+#contact-page .title-bar .buttons .btn {
+  background-color: #d1d3d2;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #403b72;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#contact-page .title-bar .buttons .btn.main-btn {
+  background-color: #13bd7e;
+}
+#contact-page .title-bar .buttons .btn.main-btn:hover {
+  background-color: rgb(9.6826923077, 96.3173076923, 64.2115384615);
+}
+#contact-page .title-bar .buttons .btn.control-btn {
+  background-color: #fff200;
+}
+#contact-page .title-bar .buttons .btn.control-btn:hover {
+  background-color: rgb(153, 145.2, 0);
+}
+#contact-page .title-bar .buttons .btn.negative-btn {
+  background-color: #f33f46;
+}
+#contact-page .title-bar .buttons .btn.negative-btn:hover {
+  background-color: #c00c13;
+}
+#contact-page .content {
+  padding: 20px;
+  background-color: #403b72;
+  color: #d1d3d2;
+  box-shadow: inset 2px 2px 0px #4a4a8a, inset -2px -2px 0px #1b1b3a;
+}
+#contact-page .content .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+#contact-page .content .form-group label {
+  color: #f2f2f2;
+  margin-bottom: 10px;
+  font-family: "MS Sans Serif", "Courier New", monospace;
+}
+#contact-page .content .form-group input,
+#contact-page .content .form-group textarea {
+  width: 100%;
+  max-width: calc(100% - 10px);
+  background-color: #f2f2f2;
+  border: 2px solid #403b72;
+  padding: 10px;
+  font-family: "MS Sans Serif", "Courier New", monospace;
+  box-sizing: border-box;
+  box-shadow: inset 2px 2px 0px #4a4a8a, inset -2px -2px 0px #1b1b3a;
+}
+#contact-page .content .section-btn {
+  width: auto;
+  display: inline-block;
+  background-color: #13bd7e;
+  color: #f2f2f2;
+  border: 2px solid #403b72;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+#contact-page .content .section-btn:hover {
+  background-color: #fe7d04;
+  transform: scale(1.05);
+}
+#contact-page .content .flash-notice {
+  background-color: #13bd7e;
+  color: #f2f2f2;
+  padding: 10px;
+  margin-top: 20px;
+  border: 2px solid #403b72;
+}
+#contact-page .content .flash-alert {
+  background-color: #f33f46;
+  color: #f2f2f2;
+  padding: 10px;
+  margin-top: 20px;
+  border: 2px solid #403b72;
+}
+
+/* Music */
+#music-page .content {
+  padding: 20px;
+}
+#music-page .content h2 {
+  font-family: "MS Sans Serif", "Courier New", monospace;
+  color: #fe7d04;
+  text-align: center;
+  margin-bottom: 20px;
+}
+#music-page .content .spotify-embed {
+  margin-bottom: 20px;
+}
+#music-page .content .spotify-embed iframe {
+  box-shadow: 4px 4px 0px #1b1b3a, -4px -4px 0px #4a4a8a;
+}
+
+#music-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.music-window {
+  width: calc(50% - 20px);
+  box-sizing: border-box;
+}
+.music-window .content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  #music-container {
+    flex-direction: column;
+  }
+  .music-window {
+    width: 100%;
+  }
+}
+/* Blog Page Styling */
+.blog-page {
+  display: grid;
+  grid-template-areas: "post-selector post-details" "post-title-bar post-details";
+  grid-template-columns: 3fr 7fr;
+  grid-template-rows: auto 100px;
+  gap: 20px;
+  padding: 20px;
+  color: #d1d3d2;
+}
+
+/* Post Selector Grid (Left Column) */
+.post-selector {
+  grid-area: post-selector;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  gap: 10px;
+  background-color: #403b72;
+  padding: 10px;
+  border: 2px solid #1b1b3a;
+  box-shadow: 4px 4px 0px #1b1b3a, -4px -4px 0px #4a4a8a;
+}
+
+/* Individual Post Square */
+.post-square {
+  width: 50px;
+  height: 50px;
+  background-color: #00266c;
+  border: 2px solid #1b1b3a;
+  box-shadow: 2px 2px 0px #4a4a8a, -2px -2px 0px #1b1b3a;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+  display: flex; /* Add flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  font-size: 16px; /* Make text larger */
+  color: white; /* Ensure text is visible */
+  font-family: "MS Sans Serif", "Courier New", monospace;
+}
+
+.post-square:hover {
+  background-color: #59a0ef;
+  transform: scale(1.1);
+}
+
+.post-square.selected {
+  background-color: #59a0ef;
+}
+
+/* Post Details Box (Right Column) */
+.post-details {
+  grid-area: post-details;
+  background-color: #821b2e; /* Red box for details */
+  color: #f2f2f2;
+  border: 2px solid #1b1b3a;
+  box-shadow: inset 2px 2px 0px #4a4a8a, inset -2px -2px 0px #1b1b3a;
+  padding: 20px;
+  font-family: "MS Sans Serif", "Courier New", monospace;
+  font-size: 16px;
+  overflow: auto;
+}
+
+/* Post Title Bar (Bottom) */
+.post-title-bar {
+  grid-area: post-title-bar;
+  background-color: #2a4179; /* Blue box for title bar */
+  color: #f2f2f2;
+  padding: 10px;
+  border: 2px solid #1b1b3a;
+  box-shadow: inset 2px 2px 0px #4a4a8a, inset -2px -2px 0px #1b1b3a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "MS Sans Serif", "Courier New", monospace;
+}
+
+/* Post Title and Date */
+.post-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.post-date {
+  font-size: 14px;
+  text-align: right;
+}
+
+/* Games List Styling */
+.games-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Game Item Styling */
+.game-item {
+  display: flex;
+  align-items: flex-start;
+  background-color: rgb(73.4335260116, 67.6965317919, 130.8034682081);
+  border: 2px solid #403b72;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 2px 2px 0 #1b1b3a, -2px -2px 0 #4a4a8a;
+  gap: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.game-item:hover {
+  transform: scale(1.03);
+  box-shadow: 4px 4px 0 #1b1b3a, -4px -4px 0 #4a4a8a;
+}
+
+/* Game Image Styling */
+.game-image img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border: 2px solid #403b72;
+  border-radius: 5px;
+  background-color: rgb(82.8670520231, 76.3930635838, 147.6069364162);
+  box-shadow: inset 1px 1px 2px #4a4a8a, inset -1px -1px 2px #1b1b3a;
+}
+
+/* Game Details Styling */
+.game-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "MS Sans Serif", "Courier New", monospace;
+  color: #d1d3d2;
+}
+.game-details h3 {
+  font-size: 16px;
+  font-family: "MS Sans Serif", "Courier New", monospace;
+  color: #f2f2f2;
+  margin: 0;
+  margin-bottom: 5px;
+}
+.game-details p {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.4;
+}
+.game-details strong {
+  color: #13bd7e;
+}
+
+/* Specific Adjustments for Currently Playing Window */
+#currently-playing-games-window .game-item {
+  background-color: rgb(120.8713692946, 110.1410788382, 184.3589211618);
+}
+
+/* Specific Adjustments for Mastered Games Window */
+#mastered-games-window .game-item {
+  background-color: rgb(120.8713692946, 110.1410788382, 184.3589211618);
+  border: 2px solid rgb(254.3035714286, 164.4642857143, 80.1964285714);
+}
+
+/* Button Styling for Interactions (Optional) */
+.action-button {
+  background-color: #13bd7e;
+  color: #f2f2f2;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 0 #4a4a8a, inset -2px -2px 0 #403b72;
+  font-size: 14px;
+  font-family: "MS Sans Serif", "Courier New", monospace;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+.action-button:hover {
+  background-color: rgb(9.6826923077, 96.3173076923, 64.2115384615);
+  transform: scale(1.05);
+}
+
+.achievements-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.achievement-item {
+  background-color: #403b72;
+  border: 2px solid #695db0;
+  box-shadow: 4px 4px 0px #1b1b3a, -4px -4px 0px #4a4a8a;
+  padding: 10px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.achievement-image img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 10px;
+}
+
+.achievement-details h3 {
+  font-size: 16px;
+  color: #fe7d04;
+  margin-bottom: 10px;
+}
+
+.achievement-details p {
+  font-size: 14px;
+  color: #d1d3d2;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #403b72;
+  color: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+  border-top: 2px solid #403b72;
+  box-shadow: 0px -4px 0px #1b1b3a, 0px 4px 0px #4a4a8a;
+}
+
+@font-face {
+  font-family: "Gamecube";
+  src: asset-url("GameCube.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gamecube";
+  src: asset-url("GameCube.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Desktop Container for Home Page */
+.desktop-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+h2 {
+  color: #d1d3d2;
+}
+
+/* Windowed Containers for Desktop Sections */
+.window {
+  background-color: #403b72;
+  width: 400px;
+  margin: 20px;
+  border: 2px solid #403b72;
+  box-shadow: 4px 4px 0px #1b1b3a, -4px -4px 0px #4a4a8a;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Larger Windows */
+.large-window {
+  background-color: #403b72;
+  width: 600px;
+  margin: 20px;
+  box-shadow: 6px 6px 0px #1b1b3a, -6px -6px 0px #4a4a8a;
+  overflow: hidden;
+}
+
+/* Title Bar for Both Window Sizes */
+.window .title-bar,
+.large-window .title-bar {
+  background-color: #695db0;
+  color: #f2f2f2;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #403b72;
+  font-size: 18px;
+  font-family: "MS Sans Serif", "Courier New", monospace;
+  box-sizing: border-box;
+}
+
+/* Content for Both Window Sizes */
+.window .content,
+.large-window .content {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Fix for Images Inside Large Windows */
+.large-window img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Title Bar Buttons */
+.title-bar .buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.title-bar .buttons .btn {
+  background-color: #d1d3d2;
+  width: 25px;
+  height: 15px;
+  border: 1px solid #403b72;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.title-bar .buttons .btn:hover {
+  background-color: #fe7d04;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .window,
+  .large-window {
+    width: 90%;
+    margin: 10px;
+  }
+}
+/* Section Styles */
+.section {
+  background-color: #403b72;
+  padding: 20px 10px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  border: 2px solid #403b72;
+  box-shadow: 4px 4px 0px #1b1b3a, -4px -4px 0px #4a4a8a;
+}
+
+.section h2 {
+  font-family: "MS Sans Serif", "Courier New", monospace;
+  color: #fe7d04;
+  margin-bottom: 10px;
+}
+
+.section p {
+  font-size: 18px;
+  color: #d1d3d2;
+  margin-bottom: 20px;
+}
+
+.section-btn {
+  background-color: #695db0;
+  color: #f2f2f2;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #403b72;
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 0 #4a4a8a, inset -2px -2px 0 #403b72;
+  transition: transform 0.3s, background-color 0.3s;
+  cursor: pointer;
+}
+
+.section-btn:hover {
+  background-color: #fe7d04;
+  transform: scale(1.05);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  background-color: #695db0;
+  border: 2px solid #403b72;
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 0px #4a4a8a, inset -2px -2px 0px #403b72, 4px 4px 0px #1b1b3a, -4px -4px 0px #4a4a8a;
+}
+
+.timeline-logo {
+  flex-shrink: 0; /* Prevent logo from resizing */
+}
+
+.timeline-logo-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  background-color: #403b72;
+  border: 2px solid #403b72;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px #1b1b3a;
+}
+
+.timeline-content {
+  flex: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.timeline-content h4 {
+  font-size: 18px;
+  color: #fe7d04;
+  margin: 0 0 5px 0;
+  font-family: "MS Sans Serif", "Courier New", monospace;
+}
+
+.timeline-content p {
+  font-size: 14px;
+  margin: 0;
+  color: #d1d3d2;
+  font-family: "MS Sans Serif", "Courier New", monospace;
+}
+
+/* Project Description Styling */
+.project-description {
+  font-family: "MS Sans Serif", "Courier New", monospace;
+  color: #d1d3d2;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Screenshot Image Styling */
+.project-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border: 2px solid #403b72;
+  box-shadow: 4px 4px 0px #1b1b3a, -4px -4px 0px #4a4a8a;
+}
+
+@font-face {
+  font-family: "Gamecube";
+  src: asset-url("GameCube.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+/* General Navbar Styles */
+.navbar {
+  width: 100%;
+  background-color: #695db0;
+  padding: 10px;
+  position: relative;
+  border-bottom: 2px solid #403b72;
+  box-shadow: 4px 4px 0px #1b1b3a, -4px -4px 0px #4a4a8a;
+}
+
+.navbar-header {
+  display: none;
+  text-align: right;
+  padding: 10px;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+}
+
+.nav--list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  padding: 10px;
+  margin: 10px;
+  position: relative;
+  z-index: 2;
+}
+.item a {
+  color: #000;
+  font-size: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Gamecube", sans-serif;
+}
+.item a:hover {
+  color: #d1d3d2;
+}
+
+/* Active Navbar Item */
+.item.active-item {
+  background-color: #fe7d04;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Active Box for Navbar */
+.active-box {
+  position: absolute;
+  z-index: 1;
+  background-color: #d1d3d2;
+  border: 2px solid #403b72;
+  box-shadow: inset 2px 2px 0 #f2f2f2, inset -2px -2px 0 #403b72;
+  height: 40px;
+  top: 0;
+  transition: left 600ms ease-in-out, width 400ms ease-in-out, height 400ms ease-in-out;
+  transform: translateX(-3px);
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 1096px) {
+  .navbar-header {
+    display: block;
+    text-align: right;
+    padding: 10px;
+    transform: translateX(-30px);
+  }
+  .menu-toggle {
+    font-size: 32px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+  }
+  .nav--list {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #695db0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 0;
+  }
+  .nav--list.active {
+    display: flex;
+  }
+  .item {
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+    font-size: 20px;
+    font-family: "Gamecube", sans-serif;
+    border-bottom: 1px solid #403b72;
+    width: 100%;
+  }
+  .item:last-child {
+    border-bottom: none;
+  }
+}
+@font-face {
+  font-family: "Gamecube";
+  src: asset-url("GameCube.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+.section-btn {
+  background-color: #13bd7e;
+  color: #f2f2f2;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-family: "MS Sans Serif", "Courier New", monospace;
+  border: 2px solid #403b72;
+  border-radius: 5px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.section-btn:hover {
+  background-color: rgb(9.6826923077, 96.3173076923, 64.2115384615);
+  box-shadow: 0 4px 6px #1b1b3a;
+}
+.section-btn:focus {
+  outline: 2px solid rgb(9.6826923077, 96.3173076923, 64.2115384615);
+  outline-offset: 2px;
+}
+
+/* Call-to-Action Buttons */
+.project-btn {
+  background-color: #695db0;
+  color: #f2f2f2;
+  padding: 10px 20px;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #403b72;
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 0 #4a4a8a, inset -2px -2px 0 #403b72;
+  transition: transform 0.3s, background-color 0.3s;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.project-btn:hover {
+  background-color: #fe7d04;
+  transform: scale(1.05);
+}
+
+.resume-download {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.resume-download .button {
+  background-color: #13bd7e;
+  color: #f2f2f2;
+  font-family: "MS Sans Serif", "Courier New", monospace;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  text-decoration: none;
+  border: 2px solid rgb(9.6826923077, 96.3173076923, 64.2115384615);
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 0 #4a4a8a, inset -2px -2px 0 rgb(9.6826923077, 96.3173076923, 64.2115384615), 4px 4px 0px #1b1b3a, -4px -4px 0px #4a4a8a;
+  transition: transform 0.3s, background-color 0.3s;
+  cursor: pointer;
+}
+.resume-download .button:hover {
+  background-color: rgb(9.6826923077, 96.3173076923, 64.2115384615);
+}
+
+/* Title Bar Buttons */
+.title-bar .buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.title-bar .buttons .btn {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Main Button */
+.title-bar .btn.main-btn {
+  background-color: #13bd7e;
+}
+
+.title-bar .btn.main-btn:hover {
+  background-color: rgb(9.6826923077, 96.3173076923, 64.2115384615);
+}
+
+/* Control Button */
+.title-bar .btn.control-btn {
+  background-color: #fff200;
+}
+
+.title-bar .btn.control-btn:hover {
+  background-color: rgb(153, 145.2, 0);
+}
+
+/* Negative Button */
+.title-bar .btn.negative-btn {
+  background-color: #f33f46;
+}
+
+.title-bar .btn.negative-btn:hover {
+  background-color: #c00c13;
+}
+
+/*# sourceMappingURL=style.css.map */

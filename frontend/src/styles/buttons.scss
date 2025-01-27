@@ -1,0 +1,108 @@
+@import 'variables';
+
+.section-btn {
+    background-color: $main-button;
+    color: $light-color;
+    padding: $padding-small $padding-large;
+    text-decoration: none;
+    font-family: $font-main;
+    border: 2px solid $secondary-color;
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  
+    &:hover {
+      background-color: $main-button-hover;
+      box-shadow: 0 4px 6px $shadow-dark;
+    }
+  
+    &:focus {
+      outline: 2px solid $main-button-hover;
+      outline-offset: 2px;
+    }
+  }
+  
+/* Call-to-Action Buttons */
+.project-btn {
+    background-color: $primary-color;
+    color: $light-color;
+    padding: $padding-small $padding-large;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid $secondary-color;
+    border-radius: 5px;
+    box-shadow: inset 2px 2px 0 $shadow-light, inset -2px -2px 0 $secondary-color;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.project-btn:hover {
+    background-color: $hover-color;
+    transform: scale(1.05);
+}
+
+.resume-download {
+    text-align: center;
+    margin-top: $margin-large;
+}
+
+.resume-download .button {
+    background-color: $main-button;
+    color: $light-color;
+    font-family: $font-main;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: $padding-small $padding-large;
+    text-decoration: none;
+    border: 2px solid $main-button-hover;
+    border-radius: 5px;
+    box-shadow: inset 2px 2px 0 $shadow-light, inset -2px -2px 0 $main-button-hover, 
+                4px 4px 0px $shadow-dark, -4px -4px 0px $shadow-light;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $main-button-hover;
+    }
+}
+
+
+/* Title Bar Buttons */
+.title-bar .buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.title-bar .buttons .btn {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Main Button */
+.title-bar .btn.main-btn {
+    background-color: $main-button;
+}
+.title-bar .btn.main-btn:hover {
+    background-color: $main-button-hover;
+}
+
+/* Control Button */
+.title-bar .btn.control-btn {
+    background-color: $control-button;
+}
+.title-bar .btn.control-btn:hover {
+    background-color: $control-button-hover;
+}
+
+/* Negative Button */
+.title-bar .btn.negative-btn {
+    background-color: $negative-button;
+}
+.title-bar .btn.negative-btn:hover {
+    background-color: $negative-button-hover;
+}
