@@ -1,24 +1,24 @@
-@import 'variables';
+@use 'variables' as vars;
 
 /* Desktop Container for Home Page */
 .desktop-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: $padding-large;
+    padding: vars.$padding-large;
 }
 
 h2 {
-    color: $text-color;
+    color: vars.$text-color;
 }
 
 /* Windowed Containers for Desktop Sections */
 .window {
-    background-color: $secondary-color;
+    background-color: vars.$secondary-color;
     width: 400px;
-    margin: $margin-large;
-    border: 2px solid $secondary-color;
-    box-shadow: 4px 4px 0px $shadow-dark, -4px -4px 0px $shadow-light;
+    margin: vars.$margin-large;
+    border: 2px solid vars.$secondary-color;
+    box-shadow: 4px 4px 0px vars.$shadow-dark, -4px -4px 0px vars.$shadow-light;
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -26,33 +26,33 @@ h2 {
 
 /* Larger Windows */
 .large-window {
-    background-color: $secondary-color;
+    background-color: vars.$secondary-color;
     width: 600px;
-    margin: $margin-large;
-    box-shadow: 6px 6px 0px $shadow-dark, -6px -6px 0px $shadow-light;
+    margin: vars.$margin-large;
+    box-shadow: 6px 6px 0px vars.$shadow-dark, -6px -6px 0px vars.$shadow-light;
     overflow: hidden;
 }
 
 /* Title Bar for Both Window Sizes */
 .window .title-bar,
 .large-window .title-bar {
-    background-color: $primary-color;
-    color: $light-color;
+    background-color: vars.$primary-color;
+    color: vars.$light-color;
     width: 100%;
-    padding: $padding-small;
+    padding: vars.$padding-small;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid $secondary-color;
+    border-bottom: 2px solid vars.$secondary-color;
     font-size: 18px;
-    font-family: $font-main;
+    font-family: vars.$font-main;
     box-sizing: border-box;
 }
 
 /* Content for Both Window Sizes */
 .window .content,
 .large-window .content {
-    padding: $padding-large;
+    padding: vars.$padding-large;
     box-sizing: border-box;
 }
 
@@ -71,16 +71,16 @@ h2 {
 }
 
 .title-bar .buttons .btn {
-    background-color: $text-color;
+    background-color: vars.$text-color;
     width: 25px;
     height: 15px;
-    border: 1px solid $secondary-color;
+    border: 1px solid vars.$secondary-color;
     border-radius: 50%;
     cursor: pointer;
 }
 
 .title-bar .buttons .btn:hover {
-    background-color: $hover-color;
+    background-color: vars.$hover-color;
 }
 
 /* Responsive Adjustments */
@@ -88,57 +88,57 @@ h2 {
     .window,
     .large-window {
         width: 90%;
-        margin: $padding-small;
+        margin: vars.$padding-small;
     }
 }
 
 
 /* Section Styles */
 .section {
-    background-color: $secondary-color;
-    padding: $padding-large $padding-small;
+    background-color: vars.$secondary-color;
+    padding: vars.$padding-large vars.$padding-small;
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-    border: 2px solid $secondary-color;
-    box-shadow: 4px 4px 0px $shadow-dark, -4px -4px 0px $shadow-light;
+    border: 2px solid vars.$secondary-color;
+    box-shadow: 4px 4px 0px vars.$shadow-dark, -4px -4px 0px vars.$shadow-light;
 }
 
 .section h2 {
-    font-family: $font-main;
-    color: $hover-color;
-    margin-bottom: $margin-small;
+    font-family: vars.$font-main;
+    color: vars.$hover-color;
+    margin-bottom: vars.$margin-small;
 }
 
 .section p {
     font-size: 18px;
-    color: $text-color;
-    margin-bottom: $margin-large;
+    color: vars.$text-color;
+    margin-bottom: vars.$margin-large;
 }
 
 .section-btn {
-    background-color: $primary-color;
-    color: $light-color;
-    padding: $padding-small $padding-large;
+    background-color: vars.$primary-color;
+    color: vars.$light-color;
+    padding: vars.$padding-small vars.$padding-large;
     text-transform: uppercase;
     text-decoration: none;
     font-weight: bold;
-    border: 2px solid $secondary-color;
+    border: 2px solid vars.$secondary-color;
     border-radius: 5px;
-    box-shadow: inset 2px 2px 0 $shadow-light, inset -2px -2px 0 $secondary-color;
+    box-shadow: inset 2px 2px 0 vars.$shadow-light, inset -2px -2px 0 vars.$secondary-color;
     transition: transform 0.3s, background-color 0.3s;
     cursor: pointer;
 }
 
 .section-btn:hover {
-    background-color: $hover-color;
+    background-color: vars.$hover-color;
     transform: scale(1.05);
 }
 
 .timeline {
     display: flex;
     flex-direction: column;
-    gap: $padding-large;
+    gap: vars.$padding-large;
     margin: 0 auto;
     max-width: 800px;
 }
@@ -146,13 +146,13 @@ h2 {
 .timeline-item {
     display: flex;
     align-items: center;
-    gap: $padding-large;
+    gap: vars.$padding-large;
     padding: 15px;
-    background-color: $primary-color;
-    border: 2px solid $secondary-color;
+    background-color: vars.$primary-color;
+    border: 2px solid vars.$secondary-color;
     border-radius: 5px;
-    box-shadow: inset 2px 2px 0px $shadow-light, inset -2px -2px 0px $secondary-color, 
-                4px 4px 0px $shadow-dark, -4px -4px 0px $shadow-light;
+    box-shadow: inset 2px 2px 0px vars.$shadow-light, inset -2px -2px 0px vars.$secondary-color, 
+                4px 4px 0px vars.$shadow-dark, -4px -4px 0px vars.$shadow-light;
 }
 
 .timeline-logo {
@@ -163,10 +163,10 @@ h2 {
     width: 80px;
     height: 80px;
     object-fit: contain;
-    background-color: $secondary-color;
-    border: 2px solid $secondary-color;
+    background-color: vars.$secondary-color;
+    border: 2px solid vars.$secondary-color;
     border-radius: 5px;
-    box-shadow: 2px 2px 4px $shadow-dark;
+    box-shadow: 2px 2px 4px vars.$shadow-dark;
 }
 
 .timeline-content {
@@ -179,25 +179,25 @@ h2 {
 
 .timeline-content h4 {
     font-size: 18px;
-    color: $hover-color;
+    color: vars.$hover-color;
     margin: 0 0 5px 0;
-    font-family: $font-main;
+    font-family: vars.$font-main;
 }
 
 .timeline-content p {
     font-size: 14px;
     margin: 0;
-    color: $text-color;
-    font-family: $font-main;
+    color: vars.$text-color;
+    font-family: vars.$font-main;
 }
 
 /* Project Description Styling */
 .project-description {
-    font-family: $font-main;
-    color: $text-color;
+    font-family: vars.$font-main;
+    color: vars.$text-color;
     font-size: 16px;
     line-height: 1.5;
-    margin-bottom: $margin-large;
+    margin-bottom: vars.$margin-large;
     text-align: left;
 }
 
@@ -205,7 +205,7 @@ h2 {
 .project-image {
     width: 100%;
     height: auto;
-    margin-bottom: $margin-small;
-    border: 2px solid $secondary-color;
-    box-shadow: 4px 4px 0px $shadow-dark, -4px -4px 0px $shadow-light;
+    margin-bottom: vars.$margin-small;
+    border: 2px solid vars.$secondary-color;
+    box-shadow: 4px 4px 0px vars.$shadow-dark, -4px -4px 0px vars.$shadow-light;
 }

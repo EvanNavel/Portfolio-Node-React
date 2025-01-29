@@ -1,71 +1,71 @@
-@import 'variables';
+@use 'variables' as vars;
 
 .section-btn {
-    background-color: $main-button;
-    color: $light-color;
-    padding: $padding-small $padding-large;
+    background-color: vars.$main-button;
+    color: vars.$light-color;
+    padding: vars.$padding-small vars.$padding-large;
     text-decoration: none;
-    font-family: $font-main;
-    border: 2px solid $secondary-color;
+    font-family: vars.$font-main;
+    border: 2px solid vars.$secondary-color;
     border-radius: 5px;
     transition: background-color 0.3s, box-shadow 0.3s;
   
     &:hover {
-      background-color: $main-button-hover;
-      box-shadow: 0 4px 6px $shadow-dark;
+      background-color: vars.$main-button-hover;
+      box-shadow: 0 4px 6px vars.$shadow-dark;
     }
   
     &:focus {
-      outline: 2px solid $main-button-hover;
+      outline: 2px solid vars.$main-button-hover;
       outline-offset: 2px;
     }
   }
   
 /* Call-to-Action Buttons */
 .project-btn {
-    background-color: $primary-color;
-    color: $light-color;
-    padding: $padding-small $padding-large;
+    background-color: vars.$primary-color;
+    color: vars.$light-color;
+    padding: vars.$padding-small vars.$padding-large;
     font-size: 14px;
     text-transform: uppercase;
     text-decoration: none;
     font-weight: bold;
-    border: 2px solid $secondary-color;
+    border: 2px solid vars.$secondary-color;
     border-radius: 5px;
-    box-shadow: inset 2px 2px 0 $shadow-light, inset -2px -2px 0 $secondary-color;
+    box-shadow: inset 2px 2px 0 vars.$shadow-light, inset -2px -2px 0 vars.$secondary-color;
     transition: transform 0.3s, background-color 0.3s;
     cursor: pointer;
     display: inline-block;
 }
 
 .project-btn:hover {
-    background-color: $hover-color;
+    background-color: vars.$hover-color;
     transform: scale(1.05);
 }
 
 .resume-download {
     text-align: center;
-    margin-top: $margin-large;
+    margin-top: vars.$margin-large;
 }
 
 .resume-download .button {
-    background-color: $main-button;
-    color: $light-color;
-    font-family: $font-main;
+    background-color: vars.$main-button;
+    color: vars.$light-color;
+    font-family: vars.$font-main;
     font-size: 14px;
     font-weight: bold;
     text-transform: uppercase;
-    padding: $padding-small $padding-large;
+    padding: vars.$padding-small vars.$padding-large;
     text-decoration: none;
-    border: 2px solid $main-button-hover;
+    border: 2px solid vars.$main-button-hover;
     border-radius: 5px;
-    box-shadow: inset 2px 2px 0 $shadow-light, inset -2px -2px 0 $main-button-hover, 
-                4px 4px 0px $shadow-dark, -4px -4px 0px $shadow-light;
+    box-shadow: inset 2px 2px 0 vars.$shadow-light, inset -2px -2px 0 vars.$main-button-hover, 
+                4px 4px 0px vars.$shadow-dark, -4px -4px 0px vars.$shadow-light;
     transition: transform 0.3s, background-color 0.3s;
     cursor: pointer;
 
     &:hover {
-        background-color: $main-button-hover;
+        background-color: vars.$main-button-hover;
     }
 }
 
@@ -85,24 +85,24 @@
 
 /* Main Button */
 .title-bar .btn.main-btn {
-    background-color: $main-button;
+    background-color: vars.$main-button;
 }
 .title-bar .btn.main-btn:hover {
-    background-color: $main-button-hover;
+    background-color: vars.$main-button-hover;
 }
 
 /* Control Button */
 .title-bar .btn.control-btn {
-    background-color: $control-button;
+    background-color: vars.$control-button;
 }
 .title-bar .btn.control-btn:hover {
-    background-color: $control-button-hover;
+    background-color: vars.$control-button-hover;
 }
 
 /* Negative Button */
 .title-bar .btn.negative-btn {
-    background-color: $negative-button;
+    background-color: vars.$negative-button;
 }
 .title-bar .btn.negative-btn:hover {
-    background-color: $negative-button-hover;
+    background-color: vars.$negative-button-hover;
 }

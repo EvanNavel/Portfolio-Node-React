@@ -1,14 +1,14 @@
-@import 'variables';
+@use 'variables' as vars;
 
 /* Global Styles */
 body {
-    font-family: $font-main;
+    font-family: vars.$font-main;
     background-color: #000000;
     margin: 0;
     padding: 0;
     background-image: 
-        linear-gradient(0deg, transparent 24%, $secondary-color 25%, $secondary-color 26%, transparent 27%, transparent 74%, $secondary-color 75%, $secondary-color 76%, transparent 77%),
-        linear-gradient(90deg, transparent 24%, $secondary-color 25%, $secondary-color 26%, transparent 27%, transparent 74%, $secondary-color 75%, $secondary-color 76%, transparent 77%);
+        linear-gradient(0deg, transparent 24%, vars.$secondary-color 25%, vars.$secondary-color 26%, transparent 27%, transparent 74%, vars.$secondary-color 75%, vars.$secondary-color 76%, transparent 77%),
+        linear-gradient(90deg, transparent 24%, vars.$secondary-color 25%, vars.$secondary-color 26%, transparent 27%, transparent 74%, vars.$secondary-color 75%, vars.$secondary-color 76%, transparent 77%);
     background-size: 40px 40px; /* Grid size */
 }
 
@@ -27,17 +27,17 @@ body {
   .profile-image {
     width: 200px;
     border-radius: 10px;
-    border: 2px solid $secondary-color;
-    box-shadow: 4px 4px 0 $shadow-dark, -4px -4px 0 $shadow-light;
+    border: 2px solid vars.$secondary-color;
+    box-shadow: 4px 4px 0 vars.$shadow-dark, -4px -4px 0 vars.$shadow-light;
   }
   
   .text-container {
     flex: 2;
-    color: $text-color;
+    color: vars.$text-color;
   }
   
   .text-container h2 {
-    color: $hover-color;
+    color: vars.$hover-color;
     font-size: 24px;
     margin-bottom: 10px;
   }
@@ -50,26 +50,26 @@ body {
 /* Contact */
 
   #contact-page {
-    background-color: $secondary-color;
+    background-color: vars.$secondary-color;
     width: 800px;
-    margin: $margin-large auto;
-    border: 2px solid $secondary-color;
-    box-shadow: 6px 6px 0px $shadow-dark, -6px -6px 0px $shadow-light;
+    margin: vars.$margin-large auto;
+    border: 2px solid vars.$secondary-color;
+    box-shadow: 6px 6px 0px vars.$shadow-dark, -6px -6px 0px vars.$shadow-light;
     position: relative;
     z-index: 1;
     overflow: hidden;
   
     .title-bar {
-      background-color: $primary-color;
-      color: $light-color;
+      background-color: vars.$primary-color;
+      color: vars.$light-color;
       width: 100%;
-      padding: $padding-small;
+      padding: vars.$padding-small;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 2px solid $secondary-color;
+      border-bottom: 2px solid vars.$secondary-color;
       font-size: 20px;
-      font-family: $font-main;
+      font-family: vars.$font-main;
       box-sizing: border-box;
   
       .buttons {
@@ -77,34 +77,34 @@ body {
         gap: 8px;
   
         .btn {
-          background-color: $text-color;
+          background-color: vars.$text-color;
           width: 20px;
           height: 20px;
-          border: 2px solid $secondary-color;
+          border: 2px solid vars.$secondary-color;
           border-radius: 50%;
           cursor: pointer;
   
           &.main-btn {
-            background-color: $main-button;
+            background-color: vars.$main-button;
   
             &:hover {
-              background-color: $main-button-hover;
+              background-color: vars.$main-button-hover;
             }
           }
   
           &.control-btn {
-            background-color: $control-button;
+            background-color: vars.$control-button;
   
             &:hover {
-              background-color: $control-button-hover;
+              background-color: vars.$control-button-hover;
             }
           }
   
           &.negative-btn {
-            background-color: $negative-button;
+            background-color: vars.$negative-button;
   
             &:hover {
-              background-color: $negative-button-hover;
+              background-color: vars.$negative-button-hover;
             }
           }
         }
@@ -112,42 +112,42 @@ body {
     }
   
     .content {
-      padding: $padding-large;
-      background-color: $secondary-color;
-      color: $text-color;
-      box-shadow: inset 2px 2px 0px $shadow-light, inset -2px -2px 0px $shadow-dark;
+      padding: vars.$padding-large;
+      background-color: vars.$secondary-color;
+      color: vars.$text-color;
+      box-shadow: inset 2px 2px 0px vars.$shadow-light, inset -2px -2px 0px vars.$shadow-dark;
   
       .form-group {
         display: flex;
         flex-direction: column;
-        margin-bottom: $margin-large;
+        margin-bottom: vars.$margin-large;
   
         label {
-          color: $light-color;
-          margin-bottom: $padding-small;
-          font-family: $font-main;
+          color: vars.$light-color;
+          margin-bottom: vars.$padding-small;
+          font-family: vars.$font-main;
         }
   
         input,
         textarea {
           width: 100%;
-          max-width: calc(100% - $padding-small);
-          background-color: $light-color;
-          border: 2px solid $secondary-color;
-          padding: $padding-small;
-          font-family: $font-main;
+          max-width: calc(100% - vars.$padding-small);
+          background-color: vars.$light-color;
+          border: 2px solid vars.$secondary-color;
+          padding: vars.$padding-small;
+          font-family: vars.$font-main;
           box-sizing: border-box;
-          box-shadow: inset 2px 2px 0px $shadow-light, inset -2px -2px 0px $shadow-dark;
+          box-shadow: inset 2px 2px 0px vars.$shadow-light, inset -2px -2px 0px vars.$shadow-dark;
         }
       }
   
       .section-btn {
         width: auto;
         display: inline-block;
-        background-color: $main-button;
-        color: $light-color;
-        border: 2px solid $secondary-color;
-        padding: $padding-small $padding-large;
+        background-color: vars.$main-button;
+        color: vars.$light-color;
+        border: 2px solid vars.$secondary-color;
+        padding: vars.$padding-small vars.$padding-large;
         text-transform: uppercase;
         font-weight: bold;
         text-align: center;
@@ -155,25 +155,25 @@ body {
         transition: background-color 0.3s, transform 0.3s;
   
         &:hover {
-          background-color: $hover-color;
-          transform: scale(1.05);
+          background-color: vars.$hover-color;
+          transform: #{scale(1.05)};
         }
       }
   
       .flash-notice {
-        background-color: $main-button;
-        color: $light-color;
-        padding: $padding-small;
-        margin-top: $padding-large;
-        border: 2px solid $secondary-color;
+        background-color: vars.$main-button;
+        color: vars.$light-color;
+        padding: vars.$padding-small;
+        margin-top: vars.$padding-large;
+        border: 2px solid vars.$secondary-color;
       }
   
       .flash-alert {
-        background-color: $negative-button;
-        color: $light-color;
-        padding: $padding-small;
-        margin-top: $padding-large;
-        border: 2px solid $secondary-color;
+        background-color: vars.$negative-button;
+        color: vars.$light-color;
+        padding: vars.$padding-small;
+        margin-top: vars.$padding-large;
+        border: 2px solid vars.$secondary-color;
       }
     }
   }
@@ -181,19 +181,19 @@ body {
   /* Music */
 
   #music-page .content {
-    padding: $padding-large;
+    padding: vars.$padding-large;
   
     h2 {
-      font-family: $font-main;
-      color: $hover-color;
+      font-family: vars.$font-main;
+      color: vars.$hover-color;
       text-align: center;
-      margin-bottom: $margin-large;
+      margin-bottom: vars.$margin-large;
     }
   
     .spotify-embed {
-      margin-bottom: $margin-large;
+      margin-bottom: vars.$margin-large;
       iframe {
-        box-shadow: 4px 4px 0px $shadow-dark, -4px -4px 0px $shadow-light;
+        box-shadow: 4px 4px 0px vars.$shadow-dark, -4px -4px 0px vars.$shadow-light;
       }
     }
   }
@@ -202,18 +202,18 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: $margin-large;
-    padding: $padding-large;
+    gap: vars.$margin-large;
+    padding: vars.$padding-large;
   }
   
   .music-window {
-    width: calc(50% - $margin-large);
+    width: calc(50% - vars.$margin-large);
     box-sizing: border-box;
   
     .content {
       display: flex;
       flex-direction: column;
-      gap: $margin-large;
+      gap: vars.$margin-large;
     }
   }
   
@@ -238,7 +238,7 @@ body {
     grid-template-rows: auto 100px;
     gap: 20px;
     padding: 20px;
-    color: $text-color;
+    color: vars.$text-color;
   }
   
   /* Post Selector Grid (Left Column) */
@@ -247,10 +247,10 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
     gap: 10px;
-    background-color: $secondary-color;
+    background-color: vars.$secondary-color;
     padding: 10px;
-    border: 2px solid $shadow-dark;
-    box-shadow: 4px 4px 0px $shadow-dark, -4px -4px 0px $shadow-light;
+    border: 2px solid vars.$shadow-dark;
+    box-shadow: 4px 4px 0px vars.$shadow-dark, -4px -4px 0px vars.$shadow-light;
   }
   
   /* Individual Post Square */
@@ -258,8 +258,8 @@ body {
     width: 50px;
     height: 50px;
     background-color: #00266c;
-    border: 2px solid $shadow-dark;
-    box-shadow: 2px 2px 0px $shadow-light, -2px -2px 0px $shadow-dark;
+    border: 2px solid vars.$shadow-dark;
+    box-shadow: 2px 2px 0px vars.$shadow-light, -2px -2px 0px vars.$shadow-dark;
     cursor: pointer;
     transition: transform 0.3s, background-color 0.3s;
     display: flex; /* Add flexbox */
@@ -267,7 +267,7 @@ body {
     align-items: center; /* Center vertically */
     font-size: 16px; /* Make text larger */
     color: white; /* Ensure text is visible */
-    font-family: $font-main;
+    font-family: vars.$font-main;
   }
   
   .post-square:hover {
@@ -284,11 +284,11 @@ body {
   .post-details {
     grid-area: post-details;
     background-color: #821b2e; /* Red box for details */
-    color: $light-color;
-    border: 2px solid $shadow-dark;
-    box-shadow: inset 2px 2px 0px $shadow-light, inset -2px -2px 0px $shadow-dark;
+    color: vars.$light-color;
+    border: 2px solid vars.$shadow-dark;
+    box-shadow: inset 2px 2px 0px vars.$shadow-light, inset -2px -2px 0px vars.$shadow-dark;
     padding: 20px;
-    font-family: $font-main;
+    font-family: vars.$font-main;
     font-size: 16px;
     overflow: auto;
   }
@@ -297,14 +297,14 @@ body {
   .post-title-bar {
     grid-area: post-title-bar;
     background-color: #2a4179; /* Blue box for title bar */
-    color: $light-color;
+    color: vars.$light-color;
     padding: 10px;
-    border: 2px solid $shadow-dark;
-    box-shadow: inset 2px 2px 0px $shadow-light, inset -2px -2px 0px $shadow-dark;
+    border: 2px solid vars.$shadow-dark;
+    box-shadow: inset 2px 2px 0px vars.$shadow-light, inset -2px -2px 0px vars.$shadow-dark;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: $font-main;
+    font-family: vars.$font-main;
   }
   
   /* Post Title and Date */
@@ -325,24 +325,24 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: $margin-large; // Space between game items
+    gap: vars.$margin-large; // Space between game items
   }
   
   /* Game Item Styling */
   .game-item {
     display: flex;
     align-items: flex-start;
-    background-color: lighten($secondary-color, 5%);
-    border: 2px solid $secondary-color;
+    background-color: lighten(vars.$secondary-color, 5%);
+    border: 2px solid vars.$secondary-color;
     border-radius: 8px;
-    padding: $padding-small;
-    box-shadow: 2px 2px 0 $shadow-dark, -2px -2px 0 $shadow-light;
-    gap: $margin-small; // Space between image and details
+    padding: vars.$padding-small;
+    box-shadow: 2px 2px 0 vars.$shadow-dark, -2px -2px 0 vars.$shadow-light;
+    gap: vars.$margin-small; // Space between image and details
     transition: transform 0.3s, box-shadow 0.3s;
   
     &:hover {
       transform: scale(1.03);
-      box-shadow: 4px 4px 0 $shadow-dark, -4px -4px 0 $shadow-light;
+      box-shadow: 4px 4px 0 vars.$shadow-dark, -4px -4px 0 vars.$shadow-light;
     }
   }
   
@@ -351,10 +351,10 @@ body {
     width: 70px; // Adjust width for consistency
     height: 70px;
     object-fit: contain;
-    border: 2px solid $secondary-color;
+    border: 2px solid vars.$secondary-color;
     border-radius: 5px;
-    background-color: lighten($secondary-color, 10%);
-    box-shadow: inset 1px 1px 2px $shadow-light, inset -1px -1px 2px $shadow-dark;
+    background-color: lighten(vars.$secondary-color, 10%);
+    box-shadow: inset 1px 1px 2px vars.$shadow-light, inset -1px -1px 2px vars.$shadow-dark;
   }
   
   /* Game Details Styling */
@@ -362,13 +362,13 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family: $font-main;
-    color: $text-color;
+    font-family: vars.$font-main;
+    color: vars.$text-color;
   
     h3 {
       font-size: 16px;
-      font-family: $font-main;
-      color: $light-color;
+      font-family: vars.$font-main;
+      color: vars.$light-color;
       margin: 0;
       margin-bottom: 5px;
     }
@@ -380,36 +380,36 @@ body {
     }
   
     strong {
-      color: $main-button;
+      color: vars.$main-button;
     }
   }
   
   /* Specific Adjustments for Currently Playing Window */
   #currently-playing-games-window .game-item {
-    background-color: lighten($primary-color, 5%);
+    background-color: lighten(vars.$primary-color, 5%);
   }
   
   /* Specific Adjustments for Mastered Games Window */
   #mastered-games-window .game-item {
-    background-color: lighten($primary-color, 5%);
-    border: 2px solid lighten($hover-color, 15%);
+    background-color: lighten(vars.$primary-color, 5%);
+    border: 2px solid lighten(vars.$hover-color, 15%);
   }
   
   /* Button Styling for Interactions (Optional) */
   .action-button {
-    background-color: $main-button;
-    color: $light-color;
-    padding: $padding-small $padding-large;
+    background-color: vars.$main-button;
+    color: vars.$light-color;
+    padding: vars.$padding-small vars.$padding-large;
     border: none;
     border-radius: 5px;
-    box-shadow: inset 2px 2px 0 $shadow-light, inset -2px -2px 0 $secondary-color;
+    box-shadow: inset 2px 2px 0 vars.$shadow-light, inset -2px -2px 0 vars.$secondary-color;
     font-size: 14px;
-    font-family: $font-main;
+    font-family: vars.$font-main;
     cursor: pointer;
     transition: transform 0.3s, background-color 0.3s;
   
     &:hover {
-      background-color: $main-button-hover;
+      background-color: vars.$main-button-hover;
       transform: scale(1.05);
     }
   }
@@ -423,10 +423,10 @@ body {
   }
   
   .achievement-item {
-    background-color: $secondary-color;
-    border: 2px solid $primary-color;
-    box-shadow: 4px 4px 0px $shadow-dark, -4px -4px 0px $shadow-light;
-    padding: $padding-small;
+    background-color: vars.$secondary-color;
+    border: 2px solid vars.$primary-color;
+    box-shadow: 4px 4px 0px vars.$shadow-dark, -4px -4px 0px vars.$shadow-light;
+    padding: vars.$padding-small;
     width: 200px;
     display: flex;
     flex-direction: column;
@@ -437,28 +437,28 @@ body {
   .achievement-image img {
     width: 64px;
     height: 64px;
-    margin-bottom: $margin-small;
+    margin-bottom: vars.$margin-small;
   }
   
   .achievement-details h3 {
     font-size: 16px;
-    color: $hover-color;
-    margin-bottom: $margin-small;
+    color: vars.$hover-color;
+    margin-bottom: vars.$margin-small;
   }
   
   .achievement-details p {
     font-size: 14px;
-    color: $text-color;
-    margin-bottom: $margin-small;
+    color: vars.$text-color;
+    margin-bottom: vars.$margin-small;
   }
   
   
 /* Footer */
 footer {
-    background-color: $secondary-color;
-    color: $light-color;
-    padding: $padding-large;
+    background-color: vars.$secondary-color;
+    color: vars.$light-color;
+    padding: vars.$padding-large;
     text-align: center;
-    border-top: 2px solid $secondary-color;
-    box-shadow: 0px -4px 0px $shadow-dark, 0px 4px 0px $shadow-light;
+    border-top: 2px solid vars.$secondary-color;
+    box-shadow: 0px -4px 0px vars.$shadow-dark, 0px 4px 0px vars.$shadow-light;
 }
