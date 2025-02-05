@@ -5,8 +5,19 @@
     <%- include('partials/navbar', { activePage }) %>
     
     <main class="content">
-      <%- include(partialPath) %>
-    </main>
+      <% if (typeof error !== 'undefined') { %>
+        <%- include('partials/error', { message: error }) %>
+      <% } %>
 
+      <%# Only pass game data to games page %>
+      <% if (partialPath === 'games') { %>
+        <%- include(partialPath, {
+          recentlyPlayedGames: recentlyPlayedGames || [],
+          masteredGames: masteredGames || []
+        }) %>
+      <% } else { %>
+        <%- include(partialPath) %>
+      <% } %>
+    </main>
   </body>
 </html>

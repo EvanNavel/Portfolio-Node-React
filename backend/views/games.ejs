@@ -1,0 +1,83 @@
+<div class="desktop-container">
+    <!-- Currently Playing Games Window -->
+    <div class="window" id="currently-playing-games-window">
+      <div class="title-bar">
+        <span>Currently Playing Games</span>
+        <div class="buttons">
+          <div class="btn main-btn"></div>
+          <div class="btn control-btn"></div>
+          <div class="btn negative-btn"></div>
+        </div>
+      </div>
+      <div class="content">
+        <% if (typeof recentlyPlayedGames !== 'undefined' && recentlyPlayedGames.length > 0) { %>
+          <ul class="games-list">
+            <% recentlyPlayedGames.forEach(game => { %>
+              <li class="game-item">
+                <div class="game-image">
+                  <img src="https://retroachievements.org<%= game.imageIcon %>" alt="<%= game.title %>" 
+                       onerror="this.src='/placeholder.png';this.onerror=null;">
+                </div>
+                <div class="game-details">
+                  <h3><%= game.title %></h3>
+                  <p><strong>Console:</strong> <%= game.consoleName %></p>
+                  <p><strong>Last Played:</strong> 
+                    <% if (game.lastPlayed) { %>
+                      <%= new Date(game.lastPlayed * 1000).toLocaleDateString('en-US', { 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric' 
+                      }) %>
+                    <% } else { %>
+                      N/A
+                    <% } %>
+                  </p>
+                  <div class="achievement-progress">
+                    <progress value="<%= game.numAchieved %>" max="<%= game.numPossibleAchievements %>"></progress>
+                    <span><%= game.numAchieved %>/<%= game.numPossibleAchievements %> achievements</span>
+                  </div>
+                </div>
+              </li>
+            <% }); %>
+          </ul>
+        <% } else { %>
+          <p class="no-data">No active games found <%= typeof error !== 'undefined' ? '(data unavailable)' : '' %></p>
+        <% } %>
+      </div>
+    </div>
+  
+    <!-- Mastered Games Window -->
+    <div class="window" id="mastered-games-window">
+      <div class="title-bar">
+        <span>Mastered Games</span>
+        <div class="buttons">
+          <div class="btn main-btn"></div>
+          <div class="btn control-btn"></div>
+          <div class="btn negative-btn"></div>
+        </div>
+      </div>
+      <div class="content">
+        <% if (typeof masteredGames !== 'undefined' && masteredGames.length > 0) { %>
+          <ul class="games-list">
+            <% masteredGames.forEach(game => { %>
+              <li class="game-item mastered">
+                <div class="game-image">
+                  <img src="https://retroachievements.org<%= game.imageIcon %>" alt="<%= game.title %>"
+                       onerror="this.src='/placeholder.png';this.onerror=null;">
+                </div>
+                <div class="game-details">
+                  <h3><%= game.title %></h3>
+                  <p><strong>Console:</strong> <%= game.consoleName %></p>
+                  <div class="mastered-badge">
+                    🏆 100% Completed
+                  </div>
+                </div>
+              </li>
+            <% }); %>
+          </ul>
+        <% } else { %>
+          <p class="no-data">No mastered games <%= typeof error !== 'undefined' ? '(data unavailable)' : 'yet' %></p>
+        <% } %>
+      </div>
+    </div>
+  </div>

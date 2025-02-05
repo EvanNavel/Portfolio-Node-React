@@ -1,5 +1,17 @@
 const express = require('express');
 const router = express.Router();
+const { 
+  fetchRecentlyPlayedGames,
+  fetchMasteredGames
+} = require('../services/games');
+
+const { 
+  buildAuthorization
+} = require('@retroachievements/api');
+
+const username = process.env.RA_USERNAME;
+const webApiKey = process.env.RA_API_KEY;
+const authorization = buildAuthorization({ username, webApiKey });
 
 // Home Page
 router.get('/', (req, res) => res.render('layout', {
@@ -23,11 +35,35 @@ router.get('/projects', (req, res) => res.render('layout', {
 }));
 
 // Games Page
-router.get('/games', (req, res) => res.render('layout', {
-  partialPath: 'games',
-  activePage: 'games',
-  title: 'Games Collection'
-}));
+router.get('/games', async (req, res) => {
+  try {
+    const [recent, mastered] = await Promise.all([
+      fetchRecentlyPlayedGames(authorization, {username: 'NavelEvan'}),
+      fetchMasteredGames(authorization, {username: 'NavelEvan', sortBy: 'lastPlayed'})
+    ]);
+    console.log(recent)
+    console.log(mastered)
+
+
+    res.render('layout', {
+      partialPath: 'games',
+      activePage: 'games',
+      title: 'Gaming Achievements',
+      recentlyPlayedGames: recent,
+      masteredGames: mastered
+    });
+  } catch (error) {
+    console.error('Games page error:', error);
+    res.render('layout', {
+      partialPath: 'games',
+      activePage: 'games',
+      title: 'Gaming Achievements',
+      error: 'Failed to load game data',
+      recentlyPlayedGames: [],
+      masteredGames: []
+    });
+  }
+});
 
 // Music Page
 router.get('/music', (req, res) => res.render('layout', {
