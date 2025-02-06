@@ -6,6 +6,8 @@ const {
   fetchRecentlyPlayedGames,
   fetchMasteredGames
 } = require('../services/games');
+const sendEmail = require('../services/emailService');
+
 
 const BlogPost = require('../models/BlogPost');
 
@@ -101,5 +103,28 @@ router.get('/contact', (req, res) => res.render('layout', {
   activePage: 'contact',
   title: 'Contact Me'
 }));
+
+router.post('/contact', async (req, res) => {
+  const { name, email, message } = req.body;
+
+  try {
+    await sendEmail(name, email, message);
+    res.status(200).render('layout', {
+      partialPath: 'contact',
+      activePage: 'contact',
+      title: 'Contact Me',
+      responseMessage: 'Your message has been sent successfully!',
+    });
+  } catch (err) {
+    console.error('Error sending email:', err);
+    res.status(500).render('layout', {
+      partialPath: 'contact',
+      activePage: 'contact',
+      title: 'Contact Me',
+      responseMessage: 'There was an error sending your message. Please try again later.',
+    });
+  }
+});
+
 
 module.exports = router;
