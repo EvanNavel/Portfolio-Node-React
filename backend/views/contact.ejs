@@ -2,26 +2,57 @@
   <div class="title-bar">
     <span>Contact Me</span>
     <div class="buttons">
-      <div class="btn minimize"></div>
-      <div class="btn maximize"></div>
-      <div class="btn close"></div>
+      <div class="btn main-btn"></div>
+      <div class="btn control-btn"></div>
+      <div class="btn negative-btn"></div>
     </div>
   </div>
+
   <div class="content">
-    <form action="<%= contact_path %>" method="POST">
+    <form id="contact-form">
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
       </div>
       <div class="form-group">
         <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
+        <textarea id="message" name="message" placeholder="Enter your message" rows="5" required></textarea>
       </div>
       <button type="submit" class="button">Send Message</button>
+      <div id="response-message"></div>
     </form>
   </div>
 </div>
+
+<!-- Add the script for EmailJS -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("your_user_id");  // Replace 'your_user_id' with your EmailJS user ID
+  })();
+
+  const form = document.getElementById('contact-form');
+  const responseMessage = document.getElementById('response-message');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(form);
+    
+    emailjs.sendForm('your_service_id', 'your_template_id', formData)
+      .then((response) => {
+        console.log('SUCCESS!', response);
+        responseMessage.textContent = "Your message has been sent successfully!";
+        responseMessage.style.color = 'green';
+        form.reset();  // Reset form fields after successful submission
+      }, (error) => {
+        console.log('FAILED...', error);
+        responseMessage.textContent = "There was an error sending your message. Please try again later.";
+        responseMessage.style.color = 'red';
+      });
+  });
+</script>
