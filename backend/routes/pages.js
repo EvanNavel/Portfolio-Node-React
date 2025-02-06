@@ -23,21 +23,21 @@ const authorization = buildAuthorization({ username, webApiKey });
 router.get('/', (req, res) => res.render('layout', {
   partialPath: 'index',
   activePage: 'home',
-  title: 'Evan Patterson - Home'
+  title: 'NaveEvan - Home'
 }));
 
 // About Page
 router.get('/about', (req, res) => res.render('layout', {
   partialPath: 'about',
   activePage: 'about',
-  title: 'About Me'
+  title: 'NaveEvan - About Me'
 }));
 
 // Projects Page
 router.get('/projects', (req, res) => res.render('layout', {
   partialPath: 'projects',
   activePage: 'projects',
-  title: 'My Projects'
+  title: 'NaveEvan - My Projects'
 }));
 
 // Games Page
@@ -50,7 +50,7 @@ router.get('/games', async (req, res) => {
     res.render('layout', {
       partialPath: 'games',
       activePage: 'games',
-      title: 'Gaming Achievements',
+      title: 'NaveEvan - RetroAchievements',
       recentlyPlayedGames: recent,
       masteredGames: mastered
     });
@@ -71,17 +71,17 @@ router.get('/games', async (req, res) => {
 router.get('/music', (req, res) => res.render('layout', {
   partialPath: 'music',
   activePage: 'music',
-  title: 'My Music'
+  title: 'NaveEvan - Music'
 }));
 
 // Blog Page
 router.get('/blog', async (req, res) => {
   try {
     const blogPosts = await BlogPost.find().sort({ createdAt: -1 });
-    res.render('layout', { // Change 'blog' to 'layout'
+    res.render('layout', {
       partialPath: 'blog',
       activePage: 'blog',
-      title: 'Blog Posts', // Add a title for the page
+      title: 'NaveEvan - Blog',
       blogPosts: blogPosts
     });
   } catch (err) {
@@ -97,7 +97,7 @@ router.get('/blog', async (req, res) => {
 router.get('/contact', (req, res) => res.render('layout', {
   partialPath: 'contact',
   activePage: 'contact',
-  title: 'Contact Me'
+  title: 'NaveEvan - Contact Me'
 }));
 
 router.post('/contact', async (req, res) => {
