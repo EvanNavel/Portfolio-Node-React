@@ -1,0 +1,37 @@
+<!-- views/blog.ejs -->
+<div class="blog-page">
+    <!-- Post Selector Grid -->
+    <div class="post-selector">
+      <% blogPosts.forEach((post, index) => { %>
+        <div class="post-square"
+             data-post-id="<%= post._id %>"
+             data-title="<%= post.title || 'Untitled Post' %>"
+             data-content="<%= post.content || 'No content available.' %>"
+             data-date="<%= post.publishedAt ? 
+               new Date(post.publishedAt).toLocaleString('en-US', { 
+                 month: 'long', 
+                 day: 'numeric', 
+                 year: 'numeric',
+                 hour: '2-digit',
+                 minute: '2-digit'
+               }) : 'Unknown Date' %>">
+          <!-- Display only the sequential number -->
+          <h2><%= index + 1 %></h2>  <!-- The index starts from 0, so adding 1 for a 1-based count -->
+        </div>
+      <% }); %>
+    </div>
+  
+    <!-- Post Details Box -->
+    <div class="post-details">
+      <p class="details-text">Select a post to view details.</p>
+    </div>
+  
+    <!-- Post Title and Date Bar -->
+    <div class="post-title-bar">
+      <span class="post-title">Post Title</span>
+      <span class="post-date">Date/Time</span>
+    </div>
+  </div>
+  
+  <script src="/js/blog.js"></script>
+  

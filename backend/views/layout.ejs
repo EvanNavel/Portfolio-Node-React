@@ -1,3 +1,4 @@
+<!-- views/layout.ejs -->
 <!DOCTYPE html>
 <html lang="en">
   <%- include('partials/head') %>
@@ -5,18 +6,23 @@
     <%- include('partials/navbar', { activePage }) %>
     
     <main class="content">
-      <% if (typeof error !== 'undefined') { %>
-        <%- include('partials/error', { message: error }) %>
-      <% } %>
+  <% if (typeof message !== 'undefined') { %>
+  <%- include('partials/error', { message }) %>
+  <% } %>
 
-      <%# Only pass game data to games page %>
+      <%# Pass appropriate data for each section %>
       <% if (partialPath === 'games') { %>
         <%- include(partialPath, {
           recentlyPlayedGames: recentlyPlayedGames || [],
           masteredGames: masteredGames || []
         }) %>
+      <% } else if (partialPath === 'blog') { %>
+        <%- include(partialPath, { 
+          blogPosts: typeof blogPosts !== 'undefined' ? blogPosts : [],
+          locals: locals
+        }) %>
       <% } else { %>
-        <%- include(partialPath) %>
+        <%- include(partialPath, { locals: locals }) %>
       <% } %>
     </main>
   </body>

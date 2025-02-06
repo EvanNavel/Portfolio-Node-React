@@ -1,9 +1,13 @@
+// routes/pages.js
+
 const express = require('express');
 const router = express.Router();
 const { 
   fetchRecentlyPlayedGames,
   fetchMasteredGames
 } = require('../services/games');
+
+const BlogPost = require('../models/BlogPost');
 
 const { 
   buildAuthorization
@@ -73,11 +77,23 @@ router.get('/music', (req, res) => res.render('layout', {
 }));
 
 // Blog Page
-router.get('/blog', (req, res) => res.render('layout', {
-  partialPath: 'blog',
-  activePage: 'blog',
-  title: 'Blog'
-}));
+router.get('/blog', async (req, res) => {
+  try {
+    const blogPosts = await BlogPost.find().sort({ createdAt: -1 });
+    res.render('layout', { // Change 'blog' to 'layout'
+      partialPath: 'blog',
+      activePage: 'blog',
+      title: 'Blog Posts', // Add a title for the page
+      blogPosts: blogPosts
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).render('layout', {
+      partialPath: 'error',
+      error: 'Failed to load blog posts'
+    });
+  }
+});
 
 // Contact Page
 router.get('/contact', (req, res) => res.render('layout', {

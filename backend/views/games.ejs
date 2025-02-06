@@ -23,18 +23,19 @@
                   <p><strong>Console:</strong> <%= game.consoleName %></p>
                   <p><strong>Last Played:</strong> 
                     <% if (game.lastPlayed) { %>
-                      <%= new Date(game.lastPlayed * 1000).toLocaleDateString('en-US', { 
+                      <%= new Date(game.lastPlayed).toLocaleDateString('en-US', { 
                         year: 'numeric', 
-                        month: 'long', 
+                        month: 'numeric', 
                         day: 'numeric' 
                       }) %>
                     <% } else { %>
                       N/A
                     <% } %>
                   </p>
+                  <p><strong>Achievements:</strong></p>
                   <div class="achievement-progress">
                     <progress value="<%= game.numAchieved %>" max="<%= game.numPossibleAchievements %>"></progress>
-                    <span><%= game.numAchieved %>/<%= game.numPossibleAchievements %> achievements</span>
+                    <span><%= game.numAchieved %>/<%= game.numPossibleAchievements %></span>
                   </div>
                 </div>
               </li>

@@ -1,9 +1,10 @@
+<!-- views/partials/error.ejs -->
 <div class="error-notice">
   <div class="error-icon">⚠️</div>
   <div class="error-content">
     <h3>Oops! Something went wrong</h3>
     <p><%= message %></p>
-    <% if (typeof error !== 'undefined') { %>
+    <% if (typeof message !== 'undefined') { %>
       <p class="retry-message">
         <a href="javascript:window.location.reload()">Click to refresh</a>
       </p>
