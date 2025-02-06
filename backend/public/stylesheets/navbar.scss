@@ -14,9 +14,11 @@
     background-color: vars.$text-color;
     border: 2px solid vars.$secondary-color;
     box-shadow: inset 2px 2px 0 vars.$light-color, inset -2px -2px 0 vars.$secondary-color;
-    transition: left 400ms ease-out, width 300ms ease-out;
+    transition: left 400ms ease-out, width 300ms ease-out, opacity 200ms ease-out;
     bottom: -2px;
-    height: calc(100% - 4px);
+    height: 25px; // Changed to thin underline
+    opacity: 0; // Start hidden
+    border-radius: 2px;
   }
 
   .nav--list {
@@ -26,7 +28,6 @@
     align-items: center;
     margin: 0;
     padding: 0;
-    height: auto; // Removed fixed height
 
     .item {
       padding: vars.$padding-small;
@@ -42,6 +43,9 @@
         font-family: vars.$font-secondary;
         display: block;
         position: relative;
+        transition: background-color 300ms ease-out;
+        padding: 8px 12px;
+        border-radius: 4px;
 
         &:hover {
           color: vars.$text-color;
@@ -50,71 +54,97 @@
 
       &.active a {
         color: vars.$text-color;
+        background-color: vars.$hover-color; // Orange background
+        box-shadow: 2px 2px 0 vars.$shadow-dark;
+        
         &::after {
-          content: '';
-          position: absolute;
-          bottom: -10px;
-          left: 0;
-          width: 100%;
-          height: 3px;
-          background: vars.$secondary-color;
+          content: none; // Remove underline
         }
       }
     }
   }
 
-  // Mobile styles
+  .navbar-header {
+    display: none;
+  }
+
   @media screen and (max-width: 1096px) {
     .navbar-header {
       display: block;
       text-align: right;
       padding: 10px;
       transform: translateX(-30px);
+      position: relative;
+      z-index: 1002; // Higher than menu
     }
-
+  
     .menu-toggle {
-      font-size: 32px;
-      background: none;
-      border: none;
+      font-size: 28px;
+      background: vars.$primary-color;
+      border: 2px solid vars.$secondary-color;
+      border-radius: 4px;
       color: #fff;
       cursor: pointer;
-      position: relative;
-      z-index: 1001;
+      position: fixed; // Keep visible when scrolling
+      right: 20px;
+      top: 20px;
+      padding: 8px;
+      z-index: 1003; // Highest priority
     }
-
+  
     .nav--list {
       display: none;
       flex-direction: column;
-      justify-content: center;
       background-color: vars.$primary-color;
       position: fixed;
-      top: 0;
+      top: 60px; // Start below header
       left: 0;
       width: 100%;
-      height: 100vh;
+      height: calc(100vh - 60px); // Account for header
       z-index: 1000;
-      padding-top: 60px;
-
+      padding: 20px 0 40px; // Top and bottom padding
+      margin: 0;
+      overflow-y: auto; // Enable scrolling if needed
+  
+      &.active {
+        display: flex;
+        animation: slideIn 300ms ease-out;
+      }
+  
       .item {
-        padding: 20px 0;
+        padding: 12px 0; // Reduced vertical spacing
         margin: 0;
-        font-size: 20px;
+        font-size: 18px; // Slightly smaller text
         border-bottom: 1px solid vars.$secondary-color;
         width: 100%;
         text-align: center;
-
+  
+        &:last-child {
+          margin-bottom: 40px; // Space for close button
+        }
+  
         a {
           color: #fff;
+          background-color: transparent !important;
+          box-shadow: none !important;
+          padding: 8px 12px; // Consistent click area
         }
-
-        &.active a::after {
-          display: none;
+  
+        &.active a {
+          color: vars.$hover-color;
         }
       }
     }
-
-    .active-box {
-      display: none; // Hide slider on mobile
+  
+    @keyframes slideIn {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
   }
 }

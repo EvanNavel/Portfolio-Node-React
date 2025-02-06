@@ -47,10 +47,6 @@ router.get('/games', async (req, res) => {
       fetchRecentlyPlayedGames(authorization, {username: 'NavelEvan'}),
       fetchMasteredGames(authorization, {username: 'NavelEvan', sortBy: 'lastPlayed'})
     ]);
-    console.log(recent)
-    console.log(mastered)
-
-
     res.render('layout', {
       partialPath: 'games',
       activePage: 'games',
