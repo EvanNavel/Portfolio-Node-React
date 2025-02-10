@@ -40,6 +40,13 @@ router.get('/projects', (req, res) => res.render('layout', {
   title: 'NaveEvan - My Projects'
 }));
 
+// Thanos Page
+router.get('/Thanos', (req, res) => res.render('layout', {
+  partialPath: 'thanos',
+  activePage: 'thanos',
+  title: 'THANOS WORLD'
+}));
+
 // Games Page
 router.get('/games', async (req, res) => {
   try {

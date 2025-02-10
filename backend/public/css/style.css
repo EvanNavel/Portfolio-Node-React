@@ -681,7 +681,7 @@ h2 {
 /* Project Description Styling */
 .project-description {
   font-family: "MS Sans Serif", "Courier New", monospace;
-  color: #d1d3d2;
+  color: #d1d3d2 !important;
   font-size: 16px;
   line-height: 1.5;
   margin-bottom: 20px;
@@ -697,6 +697,85 @@ h2 {
   box-shadow: 4px 4px 0px #1b1b3a, -4px -4px 0px #4a4a8a;
 }
 
+/* Thanos Page Styles (Applied only on the Thanos page) */
+body.thanos-page {
+  background-color: #573D76; /* Purple background for Thanos page */
+  background-image: linear-gradient(0deg, transparent 24%, #FF0000 25%, #FF7F00 26%, #FFFF00 27%, #00FF00 28%, #0000FF 29%, #8A2BE2 30%, #4B0082 31%, #9400D3 32%, transparent 100%), linear-gradient(90deg, transparent 24%, #FF0000 25%, #FF7F00 26%, #FFFF00 27%, #00FF00 28%, #0000FF 29%, #8A2BE2 30%, #4B0082 31%, #9400D3 32%, transparent 100%);
+  background-size: 40px 40px; /* Rainbow grid size */
+}
+
+/* Thanos Window Styling */
+.thanos-window {
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  background-color: #695db0;
+  border: 3px solid #403b72;
+  box-shadow: 6px 6px 0px #1b1b3a, -6px -6px 0px #4a4a8a;
+  transition: transform 1s ease-in-out;
+}
+
+/* Title Bar for Thanos Window */
+.thanos-window .title-bar {
+  background-color: #695db0;
+  color: #f2f2f2;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-family: "MS Sans Serif", "Courier New", monospace;
+  box-sizing: border-box;
+  border-bottom: 2px solid #403b72;
+  z-index: 2;
+}
+
+.thanos-window .title-bar span {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Content inside the Thanos Window */
+.thanos-window .content {
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Thanos Image Styling */
+.thanos-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.thanos-image {
+  width: 329px;
+  height: 229px;
+  cursor: pointer;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+}
+
+/* Boing Animation */
+@keyframes boing {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  30% {
+    transform: translateY(-100px) scale(1.1);
+  }
+  50% {
+    transform: translateY(0) scale(0.9);
+  }
+  70% {
+    transform: translateY(-50px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
 .navbar {
   width: 100%;
   background-color: #695db0;
