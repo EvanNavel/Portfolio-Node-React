@@ -712,7 +712,9 @@ body.thanos-page {
   background-color: #695db0;
   border: 3px solid #403b72;
   box-shadow: 6px 6px 0px #1b1b3a, -6px -6px 0px #4a4a8a;
-  transition: transform 1s ease-in-out;
+  transition: left 1s ease-in-out, top 1s ease-in-out;
+  left: 0;
+  top: 100;
 }
 
 /* Title Bar for Thanos Window */

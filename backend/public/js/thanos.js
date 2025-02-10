@@ -5,17 +5,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const thanosImages = document.querySelectorAll(".thanos-image");
     const sound = document.getElementById("boing-sound");
 
-    // Function to move the Thanos window randomly within the viewport
+    // Function to move the Thanos window randomly
     function moveThanosWindow(windowElement) {
-        const maxX = window.innerWidth - windowElement.clientWidth; // Ensure the window stays inside the width
-        const maxY = window.innerHeight - windowElement.clientHeight; // Ensure the window stays inside the height
-
-        // Random position within the constraints of the viewport
+        const maxX = window.innerWidth - windowElement.offsetWidth;
+        const maxY = window.innerHeight - windowElement.offsetHeight - 100;
+    
         const randomX = Math.floor(Math.random() * maxX);
-        const randomY = Math.floor(Math.random() * maxY);
-
-        // Move the window by applying the translate transform
-        windowElement.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        const randomY = Math.floor(Math.random() * maxY) + 100;
+    
+        // Use absolute positioning instead of transform
+        windowElement.style.left = `${randomX}px`;
+        windowElement.style.top = `${randomY}px`;
     }
 
     // Move all windows every 3 seconds
@@ -26,14 +26,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Apply boing effect to each Thanos image
     thanosImages.forEach(thanos => {
         thanos.addEventListener("click", () => {
-            // Play sound
-            sound.currentTime = 0; // Reset sound if clicked again
+            sound.currentTime = 0;
             sound.play();
 
             // Apply animation
             thanos.style.animation = "boing 0.6s ease-out";
 
-            // Remove animation after it finishes (so it can be clicked again)
+            // Remove animation after it finishes
             setTimeout(() => {
                 thanos.style.animation = "";
             }, 600);
