@@ -15,7 +15,7 @@ h2 {
 /* Windowed Containers for Desktop Sections */
 .window {
     background-color: vars.$secondary-color;
-    width: 400px;
+    width: 350px;
     margin: vars.$margin-large;
     border: 2px solid vars.$secondary-color;
     box-shadow: 4px 4px 0px vars.$shadow-dark, -4px -4px 0px vars.$shadow-light;
@@ -27,7 +27,7 @@ h2 {
 /* Larger Windows */
 .large-window {
     background-color: vars.$secondary-color;
-    width: 600px;
+    width: 500px;
     margin: vars.$margin-large;
     box-shadow: 6px 6px 0px vars.$shadow-dark, -6px -6px 0px vars.$shadow-light;
     overflow: hidden;

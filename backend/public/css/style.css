@@ -505,7 +505,7 @@ h2 {
 /* Windowed Containers for Desktop Sections */
 .window {
   background-color: #403b72;
-  width: 400px;
+  width: 350px;
   margin: 20px;
   border: 2px solid #403b72;
   box-shadow: 4px 4px 0px #1b1b3a, -4px -4px 0px #4a4a8a;
@@ -517,7 +517,7 @@ h2 {
 /* Larger Windows */
 .large-window {
   background-color: #403b72;
-  width: 600px;
+  width: 500px;
   margin: 20px;
   box-shadow: 6px 6px 0px #1b1b3a, -6px -6px 0px #4a4a8a;
   overflow: hidden;
