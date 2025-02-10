@@ -4,8 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const thanosWindows = document.querySelectorAll(".thanos-window");
     const thanosImages = document.querySelectorAll(".thanos-image");
     const sound = document.getElementById("boing-sound");
+    const introSound = document.getElementById("intro-sound");
+    let welcomeSoundPlayed = false; // Flag to track if welcome sound has been played
 
-    // Function to move the Thanos window randomly
+    // Function to move the Thanos window
     function moveThanosWindow(windowElement) {
         const maxX = window.innerWidth - windowElement.offsetWidth;
         const maxY = window.innerHeight - windowElement.offsetHeight - 100;
@@ -23,19 +25,28 @@ document.addEventListener("DOMContentLoaded", function () {
         thanosWindows.forEach(window => moveThanosWindow(window));
     }, 3000);
 
+    // Play the welcome sound on the first click
+    document.body.addEventListener("click", function () {
+        if (!welcomeSoundPlayed) {
+            introSound.play();
+            welcomeSoundPlayed = true;
+        }
+    });
+
     // Apply boing effect to each Thanos image
     thanosImages.forEach(thanos => {
         thanos.addEventListener("click", () => {
-            sound.currentTime = 0;
-            sound.play();
+            if (welcomeSoundPlayed) {
+                sound.currentTime = 0;
+                sound.play();
 
-            // Apply animation
-            thanos.style.animation = "boing 0.6s ease-out";
+                // Apply animation
+                thanos.style.animation = "boing 0.6s ease-out";
 
-            // Remove animation after it finishes
-            setTimeout(() => {
-                thanos.style.animation = "";
-            }, 600);
+                setTimeout(() => {
+                    thanos.style.animation = "";
+                }, 600);
+            }
         });
     });
 });
